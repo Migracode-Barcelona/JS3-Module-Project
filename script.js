@@ -1,8 +1,24 @@
-function setup() {
-  const allEpisodes = getAllEpisodes();
-  createSearchBar(allEpisodes);
-  createEpisodeSelector(allEpisodes);
-  makePageForEpisodes(allEpisodes);
+async function setup() {
+  const url = "https://api.tvmaze.com/shows/82/episodes";
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const episodes = await response.json();
+      createSearchBar(episodes);
+  createEpisodeSelector(episodes);
+  makePageForEpisodes(episodes);
+  } catch (error) {
+    console.error("Failed to fetch episodes:", error);
+  }
+  // const allEpisodes = getAllEpisodes();
+  // createSearchBar(allEpisodes);
+  // createEpisodeSelector(allEpisodes);
+  // makePageForEpisodes(allEpisodes);
+
 }
 
 function makePageForEpisodes(episodeList) {
