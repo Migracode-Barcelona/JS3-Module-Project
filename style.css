@@ -1,3 +1,78 @@
-#root {
-  color: red;
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+/* Search Bar */
+#search-container {
+  margin: 20px auto;
+  text-align: center;
+}
+#search-input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  outline: none;
+}
+#search-input:focus {
+  border-color: #6200ea;
+}
+/* Episode Selector */
+#selector-container {
+  margin: 15px auto;
+}
+#select-episode {
+  width: 85%;
+  max-width: 420px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 2px solid #333;
+}
+/* Episode Cards */
+.episode-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+}
+.episode-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+}
+.episode-card img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+.episode-card h3 {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #bb86fc;
+}
+.episode-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d1d1d1;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .episode-card {
+    max-width: 90%;
+  }
 }
