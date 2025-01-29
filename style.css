@@ -1,3 +1,22 @@
 #root {
-  color: red;
+  background-color: white;
+  color: black;
+}
+
+.episode-card {
+  box-shadow: 2px 3px 4px rgb(95, 92, 92);
+}
+
+.card-title {
+  text-align: center;
+  font-weight: 600;
+}
+
+.footer-text p {
+  text-align: center;
+  font-size: 15px;
+}
+
+.footer-text {
+  margin-top: 50px;
 }
