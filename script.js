@@ -57,9 +57,18 @@ function createShowSelector(shows){
   // Add the selector above the episodes
   rootElem.before(showSelectedContainer);
 }
-   
+// Object to store cached episode data
+const episodeCache = {};
+
 async function fetchAndDisplayEpisodes(showId) {
-  // fetch episode data by ID
+
+  if(episodeCache[showId]){
+    makePageForEpisodes(episodeCache[showId]);
+    createSearchBar(episodeCache[showId]);
+    createEpisodeSelector(episodeCache[showId]);
+    return;
+  }
+  // If not cached, fetch episode data
   const episodesUrl = `https://api.tvmaze.com/shows/${showId}/episodes`;
   try {
     const episodesResponse = await fetch(episodesUrl);
